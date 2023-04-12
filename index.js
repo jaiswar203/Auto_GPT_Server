@@ -1,10 +1,10 @@
-import express from "express"
-import http from "http"
-import WebSocket from "ws";
-import { Client } from "ssh2";
-import fs from "fs"
-import path from "path";
-import dotenv from "dotenv"
+const express=require("express")
+const http=require("http")
+const WebSocket=require("ws")
+const {Client}=require("ssh2")
+const path=require("path")
+const fs=require("fs")
+const dotenv=require("dotenv")
 
 dotenv.config({path:"./.env"})
 
