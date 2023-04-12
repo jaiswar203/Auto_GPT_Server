@@ -78,10 +78,10 @@ wss.on("connection", (ws) => {
 const PORT = process.env.PORT || 3001;
 
 if(process.env.NODE_ENV==="prodcution"){
-  app.use(express.static(path.join('/home/ubuntu/server',"/","public")));
+  app.use(express.static(path.join('/home/ubuntu/Auto_GPT_Server',"/","public")));
 
   app.get("*", (_, res) => {
-    const filePath = path.join("/home/ubuntu/server", "../", "public/index.html");
+    const filePath = path.join("/home/ubuntu/Auto_GPT_Server", "../", "public/index.html");
     res.sendFile(filePath);
   });
 }else{
