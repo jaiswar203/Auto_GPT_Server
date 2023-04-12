@@ -1,15 +1,20 @@
-const express = require("express");
-const http = require("http");
-const WebSocket = require("ws");
-const { Client } = require("ssh2");
-const fs = require("fs");
-const path=require("path")
+import express from "express"
+import http from "http"
+import WebSocket from "ws";
+import { Client } from "ssh2";
+import fs from "fs"
+import path from "path";
+import dotenv from "dotenv"
+
+dotenv.config({path:"./.env"})
 
 const app = express();
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
 const activeStreams = new Map();
+
+
 
 wss.on("connection", (ws) => {
   ws.on("message", (message) => {
