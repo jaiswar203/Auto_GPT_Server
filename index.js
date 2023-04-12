@@ -84,6 +84,13 @@ if(process.env.NODE_ENV==="prodcution"){
     const filePath = path.join("/home/ubuntu/server", "../", "public/index.html");
     res.sendFile(filePath);
   });
+}else{
+  app.use(express.static(path.join('C:/Users/Jaiswar/OneDrive/Desktop/Mauka/test/terminal/server',"/","public")));
+
+  app.get("*", (_, res) => {
+    const filePath = path.join("C:/Users/Jaiswar/OneDrive/Desktop/Mauka/test/terminal/server", "../", "public/index.html");
+    res.sendFile(filePath);
+  });
 }
 
 server.listen(PORT, () => {
