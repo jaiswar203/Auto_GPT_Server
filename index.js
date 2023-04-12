@@ -77,7 +77,7 @@ wss.on("connection", (ws) => {
 
 const PORT = process.env.PORT || 3001;
 
-if(process.env.NODE_ENV==="prodcution"){
+if(process.env.NODE_ENV==="production"){
   app.use(express.static(path.join('/home/ubuntu/Auto_GPT_Server',"/","public")));
 
   app.get("*", (_, res) => {
