@@ -47,7 +47,7 @@ wss.on("connection", (ws) => {
             stream.write("sudo su\n");
             stream.write("cd /home/ubuntu/Auto-GPT\n");
             stream.write("python3 scripts/main.py\n");
-            stream.write("y\n");
+            // stream.write("y\n");
 
             // Store the stream in a variable accessible outside of this callback
             activeStreams.set(ws, stream);
@@ -70,6 +70,8 @@ wss.on("connection", (ws) => {
           host,
           username,
           privateKey: fs.readFileSync("./maukav1.pem"),
+          readyTimeout: 60000,
+          port:22
         });
     }
   });
